@@ -1,0 +1,1286 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeet Samanta — Full-Stack Web Developer for Hire</title>
+
+    <!-- SEO & Description -->
+    <meta
+      name="description"
+      content="Full-Stack Web Developer with 4+ years of experience. I build eCommerce, WordPress, Laravel apps, and more. 50+ projects delivered. Open for new projects."
+    />
+    <meta
+      name="keywords"
+      content="web developer, ecommerce, wordpress, laravel, php, full-stack, web design, kolkata"
+    />
+    <meta name="author" content="Jeet Samanta" />
+
+    <!-- Open Graph for Social Media Sharing -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Jeet Samanta — Full-Stack Web Developer"
+    />
+    <meta
+      property="og:description"
+      content="Expert Full-Stack Web Developer. I build eCommerce stores, WordPress sites, custom web apps, and more. 50+ projects delivered. Based in Kolkata, India."
+    />
+    <meta property="og:url" content="https://jeetsamanta.com/" />
+    <meta property="og:image" content="https://jeetsamanta.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Jeet Samanta" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Jeet Samanta — Full-Stack Web Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="Expert Full-Stack Web Developer. eCommerce, WordPress, Laravel, Custom Apps. 50+ projects. Open for hire."
+    />
+    <meta name="twitter:image" content="https://jeetsamanta.com/og-image.jpg" />
+    <meta name="twitter:creator" content="@jeetsamanta" />
+
+    <!-- LinkedIn Profile URL -->
+    <meta property="profile:first_name" content="Jeet" />
+    <meta property="profile:last_name" content="Samanta" />
+    <meta property="profile:username" content="jeet-samanta-642195305" />
+
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#e85d26" />
+    <meta name="robots" content="index, follow" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="canonical" href="https://jeetsamanta.com/" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      /* ── CAROUSEL STYLES ── */
+      .carousel-container {
+        position: relative;
+        margin-bottom: 40px;
+      }
+
+      .carousel-wrapper {
+        overflow: hidden;
+        border-radius: 0px;
+      }
+
+      .carousel-track {
+        display: flex;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        gap: 24px;
+        width: 100%;
+      }
+
+      .carousel-slide {
+        flex: 0 0 calc(33.333% - 16px);
+        display: flex;
+        min-width: 0;
+      }
+
+      .carousel-slide .work-card {
+        width: 100%;
+        height: 100%;
+      }
+
+      .carousel-controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 28px;
+        gap: 20px;
+      }
+
+      .carousel-nav {
+        display: flex;
+        gap: 12px;
+        flex-shrink: 0;
+      }
+
+      .carousel-btn {
+        width: 44px;
+        height: 44px;
+        border: 1.5px solid var(--line);
+        background: var(--white);
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+        font-size: 0.9rem;
+        color: var(--ink);
+        flex-shrink: 0;
+      }
+
+      .carousel-btn:hover:not(:disabled) {
+        border-color: var(--accent);
+        color: var(--accent);
+        background: var(--accent-light);
+      }
+
+      .carousel-btn:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+
+      .carousel-indicators {
+        display: flex;
+        gap: 8px;
+        flex: 1;
+        justify-content: center;
+      }
+
+      .indicator {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--line);
+        cursor: pointer;
+        transition: all 0.3s;
+        border: none;
+        padding: 0;
+      }
+
+      .indicator:hover {
+        background: var(--accent);
+      }
+
+      .indicator.active {
+        background: var(--accent);
+        width: 24px;
+        border-radius: 4px;
+      }
+
+      .cta-all-projects {
+        flex-shrink: 0;
+      }
+
+      /* Responsive carousel - 2 cards on tablet */
+      @media (max-width: 960px) {
+        .carousel-slide {
+          flex: 0 0 calc(50% - 12px);
+        }
+
+        .carousel-controls {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .carousel-nav {
+          order: 1;
+          width: 100%;
+          justify-content: center;
+          margin-bottom: 16px;
+        }
+
+        .carousel-indicators {
+          order: 2;
+          width: 100%;
+        }
+
+        .cta-all-projects {
+          order: 3;
+          width: 100%;
+          margin-top: 16px;
+          text-align: center;
+        }
+      }
+
+      /* Responsive carousel - 1 card on mobile */
+      @media (max-width: 640px) {
+        .carousel-slide {
+          flex: 0 0 100%;
+        }
+
+        .carousel-track {
+          gap: 12px;
+        }
+
+        .carousel-btn {
+          width: 36px;
+          height: 36px;
+          font-size: 0.75rem;
+        }
+
+        .carousel-controls {
+          flex-direction: column;
+          gap: 16px;
+        }
+
+        .carousel-nav {
+          order: 1;
+          margin-bottom: 0;
+        }
+
+        .carousel-indicators {
+          order: 2;
+        }
+
+        .cta-all-projects {
+          order: 3;
+          margin-top: 0;
+        }
+      }
+
+      /* ── WORK SECTION MODIFICATIONS ── */
+      #work {
+        padding: 100px 60px;
+      }
+
+      .work-header {
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      @media (max-width: 960px) {
+        #work {
+          padding: 72px 24px;
+        }
+
+        .work-header {
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a
+      href="https://wa.me/916289762156?text=Hi%20Jeet%2C%20I%20want%20to%20discuss%20a%20project"
+      target="_blank"
+      class="floating-whatsapp"
+      title="Chat on WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <!-- NAV -->
+    <nav>
+      <a href="index.html" class="nav-brand">
+        <div class="nav-avatar">J</div>
+        <div>
+          <div class="nav-name">Jeet Samanta</div>
+          <div class="nav-title-small">Full-Stack Web Developer</div>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact-section">Contact</a></li>
+      </ul>
+      <a href="#contact-section" class="nav-cta">Hire Me →</a>
+    </nav>
+
+    <main>
+      <!-- HERO -->
+      <section id="hero">
+        <div class="hero-left">
+          <div class="hero-eyebrow"><span></span> Open for new projects</div>
+          <h1 class="hero-h1">
+            I build websites<br />that <em>work</em> for<br />your business.
+          </h1>
+          <p class="hero-p">
+            Full-Stack Web Developer with 4+ years of experience. I turn your
+            ideas into fast, reliable, and beautiful websites — delivered on
+            time, every time.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact-section" class="btn-main">Start a Project</a>
+            <a href="work.html" class="btn-ghost">View My Work →</a>
+          </div>
+          <div class="hero-trust">
+            <span class="hero-trust-label">Expertise in</span>
+            <div class="trust-pills">
+              <span class="trust-pill">Laravel</span>
+              <span class="trust-pill">Core PHP</span>
+              <span class="trust-pill">eCommerce</span>
+              <span class="trust-pill">WordPress</span>
+              <span class="trust-pill">SaaS</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="hero-photo-box">
+            <img src="assets/images/jeet-image.jpeg" alt="Jeet Samanta" />
+
+            <div class="hero-badge">
+              <div>
+                <div class="hero-badge-text">Jeet Samanta</div>
+                <div class="hero-badge-sub">Web Developer · Kolkata, India</div>
+              </div>
+              <div class="hero-badge-dot"></div>
+            </div>
+          </div>
+          <div class="stat-float one">
+            <div class="stat-num-f">50+</div>
+            <div class="stat-lbl-f">Projects Done</div>
+          </div>
+          <div class="stat-float two">
+            <div class="stat-num-f">4+</div>
+            <div class="stat-lbl-f">Years Exp.</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- SERVICES -->
+      <div class="section" id="services">
+        <div class="section-label">What I Offer</div>
+        <h2 class="section-h2">Services built for<br />real business needs.</h2>
+        <p class="section-sub">
+          From a simple landing page to a complete eCommerce platform — I handle
+          it end to end.
+        </p>
+
+        <div class="services-grid">
+          <div class="svc-card fade-up">
+            <div class="svc-icon">🛒</div>
+            <div class="svc-title">eCommerce Development</div>
+            <div class="svc-desc">
+              Custom online stores with product management, cart, and secure
+              payment gateway integration. Built to convert visitors into
+              buyers.
+            </div>
+            <div class="svc-tags">
+              <span class="svc-tag">PHP</span
+              ><span class="svc-tag">Laravel</span
+              ><span class="svc-tag">WooCommerce</span
+              ><span class="svc-tag">Payment API</span>
+            </div>
+          </div>
+          <div class="svc-card fade-up fade-up-d1">
+            <div class="svc-icon">🌐</div>
+            <div class="svc-title">WordPress & WooCommerce</div>
+            <div class="svc-desc">
+              Dynamic, SEO-friendly WordPress sites with WooCommerce
+              integration. Easy for you to manage, impressive for your visitors.
+            </div>
+            <div class="svc-tags">
+              <span class="svc-tag">WordPress</span
+              ><span class="svc-tag">WooCommerce</span
+              ><span class="svc-tag">Elementor</span
+              ><span class="svc-tag">SEO</span>
+            </div>
+          </div>
+          <div class="svc-card fade-up fade-up-d2">
+            <div class="svc-icon">⚙️</div>
+            <div class="svc-title">Custom Web Applications</div>
+            <div class="svc-desc">
+              Tailor-made PHP or Laravel web apps — booking systems, portals,
+              admin dashboards, SaaS platforms, and management systems.
+            </div>
+            <div class="svc-tags">
+              <span class="svc-tag">Laravel</span
+              ><span class="svc-tag">Core PHP</span
+              ><span class="svc-tag">API</span
+              ><span class="svc-tag">Admin Panel</span>
+            </div>
+          </div>
+          <div class="svc-card fade-up">
+            <div class="svc-icon">🎨</div>
+            <div class="svc-title">Landing Pages</div>
+            <div class="svc-desc">
+              High-converting landing pages for your product, service, or
+              campaign — fast-loading, mobile-perfect, and built to generate
+              leads.
+            </div>
+            <div class="svc-tags">
+              <span class="svc-tag">HTML/CSS</span
+              ><span class="svc-tag">JS</span
+              ><span class="svc-tag">Bootstrap</span>
+            </div>
+          </div>
+          <div class="svc-card fade-up fade-up-d1">
+            <div class="svc-icon">🔗</div>
+            <div class="svc-title">API Integration & SEO</div>
+            <div class="svc-desc">
+              Connect your website to third-party services and optimize for
+              search engines. Payment gateways, WhatsApp, SMS, maps, OpenAI, and
+              more.
+            </div>
+            <div class="svc-tags">
+              <span class="svc-tag">REST API</span
+              ><span class="svc-tag">SEO</span
+              ><span class="svc-tag">OpenAI</span>
+            </div>
+          </div>
+          <div class="svc-card fade-up fade-up-d2">
+            <div class="svc-icon">🔧</div>
+            <div class="svc-title">Website Maintenance & Support</div>
+            <div class="svc-desc">
+              Bugs, speed issues, broken features? I offer ongoing support,
+              maintenance, performance optimization, and improvements for
+              existing websites.
+            </div>
+            <div class="svc-tags">
+              <span class="svc-tag">Bug Fix</span
+              ><span class="svc-tag">Speed</span
+              ><span class="svc-tag">Maintenance</span>
+            </div>
+          </div>
+          <div class="svc-card fade-up">
+            <div class="svc-icon">📱</div>
+            <div class="svc-title">Google Ads & PPC Setup</div>
+            <div class="svc-desc">
+              Campaign setup and optimization for Google Ads. Drive qualified
+              traffic to your website with expert PPC management and conversion
+              tracking.
+            </div>
+            <div class="svc-tags">
+              <span class="svc-tag">Google Ads</span
+              ><span class="svc-tag">PPC</span
+              ><span class="svc-tag">Analytics</span>
+            </div>
+          </div>
+          <div class="svc-card fade-up fade-up-d1">
+            <div class="svc-icon">📊</div>
+            <div class="svc-title">SEO Optimization</div>
+            <div class="svc-desc">
+              Technical SEO, on-page optimization, and content strategy.
+              Increase organic visibility and get sustainable traffic growth
+              from search engines.
+            </div>
+            <div class="svc-tags">
+              <span class="svc-tag">SEO</span
+              ><span class="svc-tag">Analytics</span
+              ><span class="svc-tag">Keywords</span>
+            </div>
+          </div>
+          <div class="svc-card fade-up fade-up-d2">
+            <div class="svc-icon">🛠️</div>
+            <div class="svc-title">Website Audit & Fixes</div>
+            <div class="svc-desc">
+              Complete website audit, performance optimization, security
+              improvements, and bug fixes. Get your site running at peak
+              efficiency.
+            </div>
+            <div class="svc-tags">
+              <span class="svc-tag">Audit</span
+              ><span class="svc-tag">Performance</span
+              ><span class="svc-tag">Security</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- WORK CAROUSEL SECTION -->
+      <div class="section" id="work">
+        <div class="work-header">
+          <div>
+            <div class="section-label">Portfolio</div>
+            <h2 class="section-h2" style="margin-bottom: 0">Recent work.</h2>
+          </div>
+          <a href="work.html" class="view-all">View all projects →</a>
+        </div>
+
+        <div class="carousel-container">
+          <div class="carousel-wrapper">
+            <div class="carousel-track" id="carouselTrack">
+              <!-- Slide 5: A Womens World Beauty -->
+              <div class="carousel-slide">
+                <a href="work.html" class="work-card fade-up">
+                  <div
+                    class="work-thumb"
+                    style="
+                      background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+                    "
+                  >
+                    <img
+                      src="assets/images/womenbeauty.png"
+                      alt="A Womens World Beauty"
+                    />
+                    <div class="work-thumb-overlay">
+                      <span class="work-overlay-text">View Project</span>
+                    </div>
+                  </div>
+                  <div class="work-body">
+                    <div class="work-cat">Beauty Website</div>
+                    <div class="work-title">A Womens World Beauty</div>
+                    <div class="work-desc">
+                      Modern beauty and skincare website built on WordPress.
+                      Designed with clean UI and responsive layout.
+                    </div>
+                    <div class="work-stack">
+                      <span class="work-pill">WordPress</span
+                      ><span class="work-pill">HTML</span
+                      ><span class="work-pill">Bootstrap</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 6: Hind Terminals -->
+              <div class="carousel-slide">
+                <a href="work.html" class="work-card fade-up">
+                  <div
+                    class="work-thumb"
+                    style="
+                      background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+                    "
+                  >
+                    <img
+                      src="assets/images/hindterminal.png"
+                      alt="Hind Terminals"
+                    />
+                    <div class="work-thumb-overlay">
+                      <span class="work-overlay-text">View Project</span>
+                    </div>
+                  </div>
+                  <div class="work-body">
+                    <div class="work-cat">Logistics Platform</div>
+                    <div class="work-title">Hind Terminals</div>
+                    <div class="work-desc">
+                      Large-scale logistics platform providing container
+                      freight, warehousing, and supply chain solutions.
+                    </div>
+                    <div class="work-stack">
+                      <span class="work-pill">Laravel</span
+                      ><span class="work-pill">PHP</span
+                      ><span class="work-pill">MySQL</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 7: PBYUVO -->
+              <div class="carousel-slide">
+                <a href="work.html" class="work-card fade-up">
+                  <div
+                    class="work-thumb"
+                    style="
+                      background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+                    "
+                  >
+                    <img src="assets/images/pvyubo.png" alt="PBYUVO" />
+                    <div class="work-thumb-overlay">
+                      <span class="work-overlay-text">View Project</span>
+                    </div>
+                  </div>
+                  <div class="work-body">
+                    <div class="work-cat">Coaching Platform</div>
+                    <div class="work-title">PBYUVO</div>
+                    <div class="work-desc">
+                      Coaching website built with Core PHP. Includes course
+                      details, student interaction, and SMTP email integration.
+                    </div>
+                    <div class="work-stack">
+                      <span class="work-pill">Core PHP</span
+                      ><span class="work-pill">Bootstrap</span
+                      ><span class="work-pill">jQuery</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 8: Airport Transfers Munich -->
+              <div class="carousel-slide">
+                <a href="work.html" class="work-card fade-up">
+                  <div
+                    class="work-thumb"
+                    style="
+                      background: linear-gradient(135deg, #e3f2fd, #90caf9);
+                    "
+                  >
+                    <img
+                      src="assets/images/airport_service.png"
+                      alt="Airport Transfers Munich"
+                    />
+                    <div class="work-thumb-overlay">
+                      <span class="work-overlay-text">View Project</span>
+                    </div>
+                  </div>
+                  <div class="work-body">
+                    <div class="work-cat">Taxi Booking Website</div>
+                    <div class="work-title">Airport Transfers Munich</div>
+                    <div class="work-desc">
+                      Airport taxi booking website with responsive interface,
+                      booking forms, and fare inquiry system.
+                    </div>
+                    <div class="work-stack">
+                      <span class="work-pill">Core PHP</span
+                      ><span class="work-pill">Bootstrap</span
+                      ><span class="work-pill">MySQL</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 9: Taj Indian Restaurant (Laravel) -->
+              <div class="carousel-slide">
+                <a href="work.html" class="work-card fade-up">
+                  <div
+                    class="work-thumb"
+                    style="
+                      background: linear-gradient(135deg, #fff8e1, #ffe082);
+                    "
+                  >
+                    <img
+                      src="assets/images/tajindialaravel.png"
+                      alt="Taj Indian Restaurant"
+                    />
+                    <div class="work-thumb-overlay">
+                      <span class="work-overlay-text">View Project</span>
+                    </div>
+                  </div>
+                  <div class="work-body">
+                    <div class="work-cat">Restaurant Website</div>
+                    <div class="work-title">Taj Indian Restaurant</div>
+                    <div class="work-desc">
+                      Restaurant website with table booking, online food
+                      ordering, and eCommerce functionality.
+                    </div>
+                    <div class="work-stack">
+                      <span class="work-pill">Laravel</span
+                      ><span class="work-pill">PHP</span
+                      ><span class="work-pill">MySQL</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 10: Taj Indian Amsterdam (WordPress) -->
+              <div class="carousel-slide">
+                <a href="work.html" class="work-card fade-up">
+                  <div
+                    class="work-thumb"
+                    style="
+                      background: linear-gradient(135deg, #fff3e0, #ffcc80);
+                    "
+                  >
+                    <img
+                      src="assets/images/tajWordpress.png"
+                      alt="Taj Indian Amsterdam"
+                    />
+                    <div class="work-thumb-overlay">
+                      <span class="work-overlay-text">View Project</span>
+                    </div>
+                  </div>
+                  <div class="work-body">
+                    <div class="work-cat">Restaurant Website</div>
+                    <div class="work-title">Taj Indian Amsterdam</div>
+                    <div class="work-desc">
+                      Restaurant website with online food ordering, table
+                      booking, and event management features.
+                    </div>
+                    <div class="work-stack">
+                      <span class="work-pill">WordPress</span
+                      ><span class="work-pill">WooCommerce</span
+                      ><span class="work-pill">Elementor</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 11: Arthashastra Gurukul -->
+              <div class="carousel-slide">
+                <a href="work.html" class="work-card fade-up">
+                  <div
+                    class="work-thumb"
+                    style="
+                      background: linear-gradient(135deg, #ede7f6, #d1c4e9);
+                    "
+                  >
+                    <img
+                      src="assets/images/arthashastra.png"
+                      alt="Arthashastra Gurukul"
+                    />
+                    <div class="work-thumb-overlay">
+                      <span class="work-overlay-text">View Project</span>
+                    </div>
+                  </div>
+                  <div class="work-body">
+                    <div class="work-cat">Course Platform</div>
+                    <div class="work-title">Arthashastra Gurukul</div>
+                    <div class="work-desc">
+                      Course platform with Vedic trading and investment
+                      education. Includes course management and admission
+                      system.
+                    </div>
+                    <div class="work-stack">
+                      <span class="work-pill">Laravel</span
+                      ><span class="work-pill">PHP</span
+                      ><span class="work-pill">MySQL</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 12: Rijschool Creatief -->
+              <div class="carousel-slide">
+                <a href="work.html" class="work-card fade-up">
+                  <div
+                    class="work-thumb"
+                    style="
+                      background: linear-gradient(135deg, #e0f2f1, #b2dfdb);
+                    "
+                  >
+                    <img
+                      src="assets/images/rjschool.png"
+                      alt="Rijschool Creatief"
+                    />
+                    <div class="work-thumb-overlay">
+                      <span class="work-overlay-text">View Project</span>
+                    </div>
+                  </div>
+                  <div class="work-body">
+                    <div class="work-cat">Driving School Website</div>
+                    <div class="work-title">Rijschool Creatief</div>
+                    <div class="work-desc">
+                      Driving school website with modern responsive design and
+                      Mollie payment gateway integration.
+                    </div>
+                    <div class="work-stack">
+                      <span class="work-pill">WordPress</span
+                      ><span class="work-pill">Elementor</span
+                      ><span class="work-pill">Mollie</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- ═══════════════════════════════════════════════════════════════ -->
+              <!-- HOW TO USE: -->
+              <!-- 1. Find this in your HTML: <div class="carousel-track" id="carouselTrack"> -->
+              <!-- 2. Replace ALL content inside with the slides above -->
+              <!-- 3. Keep the closing </div> tag -->
+              <!-- 4. Done! Carousel will work with 12 projects -->
+              <!-- ═══════════════════════════════════════════════════════════════ -->
+            </div>
+          </div>
+
+          <div class="carousel-controls">
+            <div class="carousel-nav">
+              <button
+                class="carousel-btn"
+                id="prevBtn"
+                aria-label="Previous slide"
+              >
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="carousel-btn" id="nextBtn" aria-label="Next slide">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+
+            <div class="carousel-indicators" id="indicators"></div>
+
+            <div class="cta-all-projects">
+              <a
+                href="work.html"
+                class="btn-ghost"
+                style="display: inline-block"
+                >See all 10+ projects →</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- WHY HIRE ME -->
+      <div class="section">
+        <div class="why-grid">
+          <div>
+            <div class="section-label">Why Choose Me</div>
+            <h2 class="section-h2">
+              What makes working<br />with me different.
+            </h2>
+            <div class="why-list" style="margin-top: 36px">
+              <div class="why-item fade-up">
+                <div class="why-num">01</div>
+                <div class="why-text">
+                  <h4>Clear Communication</h4>
+                  <p>
+                    I keep you updated at every step. No ghosting, no surprises.
+                    You always know what's happening with your project.
+                  </p>
+                </div>
+              </div>
+              <div class="why-item fade-up fade-up-d1">
+                <div class="why-num">02</div>
+                <div class="why-text">
+                  <h4>On-Time Delivery</h4>
+                  <p>
+                    I respect deadlines. I plan carefully and deliver what I
+                    promise — on time, every time.
+                  </p>
+                </div>
+              </div>
+              <div class="why-item fade-up fade-up-d2">
+                <div class="why-num">03</div>
+                <div class="why-text">
+                  <h4>Clean, Maintainable Code</h4>
+                  <p>
+                    I don't just make it work — I make it easy to grow. Clean
+                    structure means you can scale without headaches.
+                  </p>
+                </div>
+              </div>
+              <div class="why-item fade-up fade-up-d3">
+                <div class="why-num">04</div>
+                <div class="why-text">
+                  <h4>Full-Stack Ownership</h4>
+                  <p>
+                    One developer, full responsibility. No hand-offs between
+                    designers and developers. Faster, simpler, cheaper.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="why-right fade-up">
+            <h3>Ready to build<br />something great?</h3>
+            <p>
+              Whether it's a brand new site or a complete overhaul of an
+              existing one — let's talk about your project and make it happen.
+            </p>
+            <div class="why-stats">
+              <div>
+                <div class="why-stat-num">50+</div>
+                <div class="why-stat-lbl">Projects Delivered</div>
+              </div>
+              <div>
+                <div class="why-stat-num">4+</div>
+                <div class="why-stat-lbl">Years Experience</div>
+              </div>
+              <div>
+                <div class="why-stat-num">3</div>
+                <div class="why-stat-lbl">Companies Worked</div>
+              </div>
+              <div>
+                <div class="why-stat-num">10+</div>
+                <div class="why-stat-lbl">eCommerce Sites</div>
+              </div>
+            </div>
+            <a href="#contact-section" class="btn-white">Get a Free Quote →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- PROCESS -->
+      <div class="section" id="process">
+        <div style="text-align: center; margin-bottom: 64px">
+          <div class="section-label" style="justify-content: center">
+            How It Works
+          </div>
+          <h2 class="section-h2" style="text-align: center">
+            Simple, transparent process.
+          </h2>
+          <p
+            class="section-sub"
+            style="margin: 12px auto 0; text-align: center"
+          >
+            From your first message to final launch — here's exactly what to
+            expect.
+          </p>
+        </div>
+        <div class="process-row">
+          <div class="process-step fade-up">
+            <div class="process-circle">1</div>
+            <div class="process-title">Discovery Call</div>
+            <div class="process-desc">
+              We discuss your goals, requirements, timeline, and budget. Free,
+              no obligation.
+            </div>
+          </div>
+          <div class="process-step fade-up fade-up-d1">
+            <div class="process-circle">2</div>
+            <div class="process-title">Proposal & Quote</div>
+            <div class="process-desc">
+              I send a clear proposal with scope, timeline, and fixed pricing.
+              No hidden costs.
+            </div>
+          </div>
+          <div class="process-step fade-up fade-up-d2">
+            <div class="process-circle">3</div>
+            <div class="process-title">Build & Review</div>
+            <div class="process-desc">
+              I build your project with regular check-ins. You review and
+              provide feedback at every stage.
+            </div>
+          </div>
+          <div class="process-step fade-up fade-up-d3">
+            <div class="process-circle">4</div>
+            <div class="process-title">Launch & Support</div>
+            <div class="process-desc">
+              We go live together. I provide post-launch support and training so
+              you're never stuck.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACT -->
+      <section id="contact-section">
+        <div class="contact-inner">
+          <div class="contact-left">
+            <h2>Let's build your<br />next <em>website.</em></h2>
+            <p>
+              Fill in the form and I'll get back to you within 24 hours with a
+              plan. No fluff — just a straight conversation about your project.
+            </p>
+            <div class="contact-info">
+              <div class="cinfo-row">
+                <div class="cinfo-icon">✉️</div>
+                <div>
+                  <div class="cinfo-label">Email</div>
+                  <a href="mailto:jeet.samanta.dev@gmail.com" class="cinfo-val"
+                    >jeet.samanta.dev@gmail.com</a
+                  >
+                </div>
+              </div>
+              <div class="cinfo-row">
+                <div class="cinfo-icon">📞</div>
+                <div>
+                  <div class="cinfo-label">Phone / WhatsApp</div>
+                  <a href="tel:+916289762156" class="cinfo-val"
+                    >+91 6289762156</a
+                  >
+                </div>
+              </div>
+              <div class="cinfo-row">
+                <div class="cinfo-icon">💼</div>
+                <div>
+                  <div class="cinfo-label">LinkedIn</div>
+                  <a
+                    href="https://www.linkedin.com/in/jeet-samanta-642195305/"
+                    target="_blank"
+                    class="cinfo-val"
+                    >linkedin.com/in/jeet-samanta</a
+                  >
+                </div>
+              </div>
+              <div class="cinfo-row">
+                <div class="cinfo-icon">📍</div>
+                <div>
+                  <div class="cinfo-label">Location</div>
+                  <span class="cinfo-val"
+                    >Kolkata, India (Remote-friendly)</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <form class="cf" id="contactForm">
+            <div class="cf-row">
+              <div>
+                <label>Your Name *</label>
+                <input type="text" id="cname" placeholder="John Doe" required />
+              </div>
+              <div>
+                <label>Email Address *</label>
+                <input
+                  type="email"
+                  id="cemail"
+                  placeholder="you@example.com"
+                  required
+                />
+              </div>
+            </div>
+            <div class="cf-row">
+              <div>
+                <label>Phone / WhatsApp</label>
+                <input type="text" id="cphone" placeholder="+91 XXXXX XXXXX" />
+              </div>
+              <div>
+                <label>Project Type</label>
+                <select id="ctype">
+                  <option value="">Select...</option>
+                  <option>eCommerce Website</option>
+                  <option>WordPress Website</option>
+                  <option>Custom Web Application</option>
+                  <option>Landing Page</option>
+                  <option>API Integration</option>
+                  <option>Website Fix / Support</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label>Budget Range</label>
+              <select id="cbudget">
+                <option value="">Select your budget...</option>
+                <option>Under ₹10,000</option>
+                <option>₹10,000 – ₹25,000</option>
+                <option>₹25,000 – ₹50,000</option>
+                <option>₹50,000 – ₹1,00,000</option>
+                <option>Above ₹1,00,000</option>
+              </select>
+            </div>
+            <div>
+              <label>Tell Me About Your Project *</label>
+              <textarea
+                id="cmessage"
+                placeholder="Describe your project — what it is, what you need, and your timeline..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="cf-submit" id="cfSubmit">
+              Send Message — I'll Reply Within 24hrs
+            </button>
+            <div class="cf-msg" id="cfMsg"></div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2025 Jeet Samanta · Full-Stack Web Developer · Kolkata, India</p>
+      <div class="footer-right">
+        <a href="work.html">All Projects</a>
+        <a
+          href="https://www.linkedin.com/in/jeet-samanta-642195305/"
+          target="_blank"
+          >LinkedIn</a
+        >
+        <a href="mailto:jeet.samanta.dev@gmail.com">Email</a>
+        <a href="tel:+916289762156">+91 6289762156</a>
+      </div>
+    </footer>
+
+    <!-- jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      // ── CAROUSEL LOGIC ──
+      const track = document.getElementById("carouselTrack");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const indicatorsContainer = document.getElementById("indicators");
+      const slides = document.querySelectorAll(".carousel-slide");
+
+      let currentSlide = 0;
+      const totalSlides = slides.length;
+      let itemsPerView = 3; // Default desktop
+      let autoplayInterval;
+      const AUTOPLAY_DELAY = 4000; // 4 seconds
+
+      // Autoplay functions
+      function startAutoplay() {
+        autoplayInterval = setInterval(() => {
+          const maxSlide = totalSlides - itemsPerView;
+          if (currentSlide < maxSlide) {
+            currentSlide++;
+          } else {
+            currentSlide = 0; // Loop back to beginning
+          }
+          updateCarousel();
+        }, AUTOPLAY_DELAY);
+      }
+
+      function stopAutoplay() {
+        clearInterval(autoplayInterval);
+      }
+
+      function resetAutoplay() {
+        stopAutoplay();
+        startAutoplay();
+      }
+
+      // Create indicators
+      function createIndicators() {
+        indicatorsContainer.innerHTML = ""; // Clear existing
+        const maxSlides = Math.max(1, totalSlides - itemsPerView + 1);
+
+        for (let i = 0; i < maxSlides; i++) {
+          const indicator = document.createElement("button");
+          indicator.className = "indicator" + (i === 0 ? " active" : "");
+          indicator.setAttribute("aria-label", `Go to slide ${i + 1}`);
+          indicator.addEventListener("click", () => goToSlide(i));
+          indicatorsContainer.appendChild(indicator);
+        }
+      }
+
+      // Update carousel position
+      function updateCarousel() {
+        const slideWidth = 100 / itemsPerView;
+        const translateValue = currentSlide * slideWidth;
+        track.style.transform = `translateX(-${translateValue}%)`;
+
+        // Update indicators
+        document.querySelectorAll(".indicator").forEach((ind, i) => {
+          ind.classList.toggle("active", i === currentSlide);
+        });
+
+        // Update button states
+        const maxSlide = totalSlides - itemsPerView;
+        prevBtn.disabled = currentSlide === 0;
+        nextBtn.disabled = currentSlide >= maxSlide;
+      }
+
+      // Go to specific slide
+      function goToSlide(index) {
+        const maxSlide = totalSlides - itemsPerView;
+        currentSlide = Math.max(0, Math.min(index, maxSlide));
+        updateCarousel();
+      }
+
+      // Next slide
+      function nextSlide() {
+        const maxSlide = totalSlides - itemsPerView;
+        if (currentSlide < maxSlide) {
+          currentSlide++;
+          updateCarousel();
+        }
+      }
+
+      // Previous slide
+      function prevSlide() {
+        if (currentSlide > 0) {
+          currentSlide--;
+          updateCarousel();
+        }
+      }
+
+      // Handle responsive
+      function handleResize() {
+        const width = window.innerWidth;
+        let newItemsPerView;
+
+        if (width <= 640) {
+          newItemsPerView = 1;
+        } else if (width <= 960) {
+          newItemsPerView = 2;
+        } else {
+          newItemsPerView = 3;
+        }
+
+        // If items per view changed, reset and update
+        if (newItemsPerView !== itemsPerView) {
+          itemsPerView = newItemsPerView;
+          currentSlide = 0;
+          createIndicators();
+        }
+
+        updateCarousel();
+      }
+
+      // Initialize
+      createIndicators();
+      handleResize();
+      updateCarousel();
+      startAutoplay(); // Start autoplay
+
+      // Event listeners
+      nextBtn.addEventListener("click", () => {
+        nextSlide();
+        resetAutoplay();
+      });
+      prevBtn.addEventListener("click", () => {
+        prevSlide();
+        resetAutoplay();
+      });
+      window.addEventListener("resize", handleResize);
+
+      // Keyboard navigation
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") {
+          prevSlide();
+          resetAutoplay();
+        }
+        if (e.key === "ArrowRight") {
+          nextSlide();
+          resetAutoplay();
+        }
+      });
+
+      // Reset autoplay on indicator click
+      indicatorsContainer.addEventListener("click", () => {
+        resetAutoplay();
+      });
+
+      // ── SCROLL REVEAL ──
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.12 },
+      );
+      document
+        .querySelectorAll(".fade-up")
+        .forEach((el) => observer.observe(el));
+
+      // ── CONTACT FORM - SMTP EMAIL (jQuery AJAX) ──
+      $("#contactForm").on("submit", function (e) {
+        e.preventDefault();
+
+        var $form = $(this);
+        var $btn = $("#cfSubmit");
+        var $msg = $("#cfMsg");
+
+        var formData = {
+          name: $("#cname").val(),
+          email: $("#cemail").val(),
+          phone: $("#cphone").val(),
+          type: $("#ctype").val(),
+          budget: $("#cbudget").val(),
+          message: $("#cmessage").val(),
+        };
+
+        $btn.text("Sending...").prop("disabled", true);
+        $msg.removeClass("success error").text("");
+
+        $.ajax({
+          type: "POST",
+          url: "send_email.php",
+          data: JSON.stringify(formData),
+          contentType: "application/json",
+          dataType: "json",
+          success: function (result) {
+            if (result.success) {
+              $msg
+                .text(
+                  "✓ Email sent successfully! I'll get back to you within 24 hours.",
+                )
+                .addClass("success");
+              $form.trigger("reset");
+            } else {
+              throw new Error(result.error || "Failed to send email");
+            }
+          },
+          error: function (jqXHR, textStatus, errorThrown) {
+            $msg
+              .text(
+                "✗ Error sending email. Please try again or email directly: jeet.samanta.dev@gmail.com",
+              )
+              .addClass("error");
+          },
+          complete: function () {
+            $btn
+              .text("Send Message — I'll Reply Within 24hrs")
+              .prop("disabled", false);
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
