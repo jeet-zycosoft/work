@@ -91,4 +91,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             "error" => $mail->ErrorInfo
         ]);
     }
+} else {
+    // Handle non-POST requests
+    http_response_code(405);
+    echo json_encode([
+        "success" => false,
+        "error" => "405 Method Not Allowed. Only POST requests are accepted."
+    ]);
 }

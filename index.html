@@ -1043,12 +1043,7 @@
                 required
               ></textarea>
             </div>
-            <!-- Google reCAPTCHA v2 -->
-            <div
-              class="g-recaptcha"
-              data-sitekey="6LfOjOMsAAAAABDse2-AbMzQl3Al-a-L_FBP85f8"
-              style="margin: 20px 0"
-            ></div>
+            <!-- reCAPTCHA removed: GitHub Pages cannot run send_email.php; form uses Web3Forms instead -->
             <button type="submit" class="cf-submit" id="cfSubmit">
               Send Message — I'll Reply Within 24hrs
             </button>
@@ -1074,8 +1069,6 @@
 
     <!-- jQuery Library -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Google reCAPTCHA v2 -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
       // ── CAROUSEL LOGIC ──
       const track = document.getElementById("carouselTrack");
@@ -1237,7 +1230,10 @@
         .querySelectorAll(".fade-up")
         .forEach((el) => observer.observe(el));
 
-      // ── CONTACT FORM - SMTP EMAIL (jQuery AJAX) ──
+      // ── CONTACT FORM (Web3Forms — works on GitHub Pages; PHP is not available there) ──
+      // Get a free access key at https://web3forms.com and paste it below. Add your github.io domain in their dashboard.
+      var WEB3FORMS_ACCESS_KEY = "0c34ec03-7ed4-4e87-af53-51866e61d2fb";
+
       $("#contactForm").on("submit", function (e) {
         e.preventDefault();
 
@@ -1245,54 +1241,64 @@
         var $btn = $("#cfSubmit");
         var $msg = $("#cfMsg");
 
-        // Get reCAPTCHA token
-        var recaptchaToken = grecaptcha.getResponse();
-        if (!recaptchaToken) {
+        if (!WEB3FORMS_ACCESS_KEY) {
           $msg
-            .text("✗ Please complete the reCAPTCHA verification.")
+            .text(
+              "✗ Set WEB3FORMS_ACCESS_KEY in index.html (free key from web3forms.com).",
+            )
             .addClass("error");
           return;
         }
 
-        var formData = {
-          name: $("#cname").val(),
-          email: $("#cemail").val(),
-          phone: $("#cphone").val(),
-          type: $("#ctype").val(),
-          budget: $("#cbudget").val(),
-          message: $("#cmessage").val(),
-          recaptchaToken: recaptchaToken,
-        };
+        var name = $("#cname").val();
+        var email = $("#cemail").val();
+        var phone = $("#cphone").val();
+        var type = $("#ctype").val();
+        var budget = $("#cbudget").val();
+        var message = $("#cmessage").val();
+
+        var body =
+          "Phone / WhatsApp: " +
+          phone +
+          "\nProject type: " +
+          type +
+          "\nBudget: " +
+          budget +
+          "\n\n" +
+          message;
 
         $btn.text("Sending...").prop("disabled", true);
         $msg.removeClass("success error").text("");
 
         $.ajax({
           type: "POST",
-          url: "send_email.php",
-          data: JSON.stringify(formData),
+          url: "https://api.web3forms.com/submit",
+          headers: { Accept: "application/json" },
+          data: JSON.stringify({
+            access_key: WEB3FORMS_ACCESS_KEY,
+            subject: "New Project Inquiry from Portfolio Website",
+            name: name,
+            email: email,
+            message: body,
+          }),
           contentType: "application/json",
           dataType: "json",
           success: function (result) {
             if (result.success) {
               $msg
-                .text(
-                  "✓ Email sent successfully! I'll get back to you within 24 hours.",
-                )
+                .text("✓ Message sent! I'll get back to you within 24 hours.")
                 .addClass("success");
               $form.trigger("reset");
-              grecaptcha.reset(); // Reset reCAPTCHA
             } else {
-              throw new Error(result.error || "Failed to send email");
+              throw new Error(result.message || "Failed to send");
             }
           },
-          error: function (jqXHR, textStatus, errorThrown) {
+          error: function () {
             $msg
               .text(
-                "✗ Error sending email. Please try again or email directly: jeet.samanta.dev@gmail.com",
+                "✗ Could not send. Try again or email jeet.samanta.dev@gmail.com",
               )
               .addClass("error");
-            grecaptcha.reset(); // Reset reCAPTCHA on error
           },
           complete: function () {
             $btn
