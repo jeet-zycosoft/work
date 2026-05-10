@@ -1043,6 +1043,12 @@
                 required
               ></textarea>
             </div>
+            <!-- Google reCAPTCHA v2 -->
+            <div
+              class="g-recaptcha"
+              data-sitekey="6LfOjOMsAAAAABDse2-AbMzQl3Al-a-L_FBP85f8"
+              style="margin: 20px 0; display: flex; justify-content: center"
+            ></div>
             <button type="submit" class="cf-submit" id="cfSubmit">
               Send Message — I'll Reply Within 24hrs
             </button>
@@ -1059,7 +1065,7 @@
         <a
           href="https://www.linkedin.com/in/jeet-samanta-642195305/"
           target="_blank"
-          >LinkedIn</a
+          >LinkedIn new</a
         >
         <a href="mailto:jeet.samanta.dev@gmail.com">Email</a>
         <a href="tel:+916289762156">+91 6289762156</a>
@@ -1068,6 +1074,8 @@
 
     <!-- jQuery Library -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Google reCAPTCHA v2 -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
       // ── CAROUSEL LOGIC ──
       const track = document.getElementById("carouselTrack");
@@ -1237,6 +1245,15 @@
         var $btn = $("#cfSubmit");
         var $msg = $("#cfMsg");
 
+        // Get reCAPTCHA token
+        var recaptchaToken = grecaptcha.getResponse();
+        if (!recaptchaToken) {
+          $msg
+            .text("✗ Please complete the reCAPTCHA verification.")
+            .addClass("error");
+          return;
+        }
+
         var formData = {
           name: $("#cname").val(),
           email: $("#cemail").val(),
@@ -1244,6 +1261,7 @@
           type: $("#ctype").val(),
           budget: $("#cbudget").val(),
           message: $("#cmessage").val(),
+          recaptchaToken: recaptchaToken,
         };
 
         $btn.text("Sending...").prop("disabled", true);
@@ -1263,6 +1281,7 @@
                 )
                 .addClass("success");
               $form.trigger("reset");
+              grecaptcha.reset(); // Reset reCAPTCHA
             } else {
               throw new Error(result.error || "Failed to send email");
             }
@@ -1273,6 +1292,7 @@
                 "✗ Error sending email. Please try again or email directly: jeet.samanta.dev@gmail.com",
               )
               .addClass("error");
+            grecaptcha.reset(); // Reset reCAPTCHA on error
           },
           complete: function () {
             $btn

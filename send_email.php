@@ -11,12 +11,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get JSON data from request body
     $input = json_decode(file_get_contents('php://input'), true);
 
-    $name     = htmlspecialchars($input['name'] ?? '');
-    $email    = htmlspecialchars($input['email'] ?? '');
-    $phone    = htmlspecialchars($input['phone'] ?? '');
-    $type     = htmlspecialchars($input['type'] ?? '');
-    $budget   = htmlspecialchars($input['budget'] ?? '');
-    $message  = htmlspecialchars($input['message'] ?? '');
+    $name            = htmlspecialchars($input['name'] ?? '');
+    $email           = htmlspecialchars($input['email'] ?? '');
+    $phone           = htmlspecialchars($input['phone'] ?? '');
+    $type            = htmlspecialchars($input['type'] ?? '');
+    $budget          = htmlspecialchars($input['budget'] ?? '');
+    $message         = htmlspecialchars($input['message'] ?? '');
+    $recaptchaToken  = $input['recaptchaToken'] ?? '';
+
+    // Verify reCAPTCHA token
+    $secretKey = '6LfOjOMsAAAAAPsCLowNuqom0x7bItAM77tjL-EZ'; // Replace with your secret key
+    $recaptchaVerifyUrl = 'https://www.google.com/recaptcha/api/siteverify';
+
+    $recaptchaResponse = file_get_contents($recaptchaVerifyUrl, false, stream_context_create([
+        'http' => [
+            'method'  => 'POST',
+            'header'  => 'Content-Type: application/x-www-form-urlencoded',
+            'content' => http_build_query([
+                'secret'   => $secretKey,
+                'response' => $recaptchaToken,
+            ]),
+        ],
+    ]));
+
+    $recaptchaData = json_decode($recaptchaResponse, true);
+
+    // Check if reCAPTCHA verification was successful
+    if (!$recaptchaData['success'] || $recaptchaData['score'] < 0.5) {
+        echo json_encode([
+            'success' => false,
+            'error'   => 'reCAPTCHA verification failed. Please try again.',
+        ]);
+        exit;
+    }
 
     $mail = new PHPMailer(true);
 
